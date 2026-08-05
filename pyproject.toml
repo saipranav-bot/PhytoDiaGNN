@@ -1,0 +1,30 @@
+[project]
+name = "phyto-diag-nn"
+version = "0.1.0"
+description = "PhytoDiaGNN: GNN-driven multi-omics framework for anti-diabetic phytochemical discovery (pancreas-first MVP)"
+requires-python = ">=3.11"
+dependencies = [
+    "numpy<3",
+    "pandas>=2.0",
+    "scikit-learn",
+    "networkx",
+    "requests",
+    "rdkit",
+    "anndata",
+    "scanpy",
+    "harmonypy",
+    "gseapy",
+    "statsmodels",
+    "torch>=2.0",
+    "torch-geometric",
+    "matplotlib",
+    "seaborn",
+    "tqdm",
+]
+
+[project.optional-dependencies]
+spatial = ["squidpy", "liana"]
+explain = ["captum"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

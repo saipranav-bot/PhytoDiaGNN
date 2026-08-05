@@ -1,0 +1,31 @@
+{
+  "project": "PhytoDiaGNN",
+  "version": "0.1.0",
+  "scope": "pancreas-first MVP (6 months, CPU-only)",
+  "milestone": "M1-M6 complete (see REPORT.md)",
+  "datasets": {
+    "compound_sources": [
+      {"id": "imppat", "status": "to_download"},
+      {"id": "cmaup", "status": "to_download"},
+      {"id": "tcmsp", "status": "to_download"}
+    ],
+    "target_sources": [
+      {"id": "chembl", "status": "api"},
+      {"id": "string", "status": "to_download"}
+    ],
+    "scrna_verified": [
+      {"accession": "GSE81608", "note": "Segerstolpe; Smart-seq2 islets"},
+      {"accession": "GSE85241", "note": "Muraro; CEL-Seq2 islets"},
+      {"accession": "GSE86469", "note": "Lawlor/Stitzel; T2D vs ND, paired bulk"},
+      {"accession": "GSE124742", "note": "Camunas-Soler; 10x islets"},
+      {"accession": "GSE153855", "note": "Wierup; 6 ctrl + 5 T2D"},
+      {"accession": "GSE221156", "note": "48-donor atlas (245k cells) — deferred (RAM)"}
+    ],
+    "spatial": {
+      "visium_pancreas": "none open (dbGaP-gated GSE264331 / cloupe-only Zenodo / Census scRNA-only)",
+      "fallback_used": {"id": "V1_Mouse_Brain_Sagittal_Anterior", "source": "10x demo", "spots": 2695}
+    }
+  },
+  "compute": {"ram_gb": 4, "cpus": 4, "gpu": false},
+  "caps": {"max_compounds": 3000, "max_cells_per_dataset": 5000}
+}

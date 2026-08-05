@@ -1,0 +1,51 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+
+# macOS/Linux
+.DS_Store
+
+# Logs
+*.log
+
+# Jupyter
+.ipynb_checkpoints/
+
+# =========================
+# Large datasets
+# =========================
+data/raw/
+data/processed/
+data/docking/
+
+# Generated outputs
+results/
+
+# Large bioinformatics files
+*.h5
+*.h5ad
+*.loom
+*.parquet
+
+# Compressed files
+*.gz
+*.zip
+*.tar
+*.tar.gz
+
+# Excel outputs
+*.xlsx
+
+# Temporary files
+*.tmp

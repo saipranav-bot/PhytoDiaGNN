@@ -1,0 +1,61 @@
+# PhytoDiaGNN M1 — chemical library configuration (CPU-only, conservative caps)
+
+seed: 42
+
+chemical:
+  # Source databases (download URLs resolved in src/ingest/sources.py)
+  sources:
+    - imppat
+    - cmaup
+    - tc msp
+    - chembl
+    - string
+  # RDKit standardization
+  standardization:
+    remove_salts: true
+    neutralize: true
+    canonical_smiles: true
+  # Drug-likeness filters (Lipinski + Veber)
+  lipinski:
+    mw_max: 500.0
+    logp_max: 5.0
+    hbd_max: 5
+    hba_max: 10
+  veber:
+    rotatable_bonds_max: 10
+    tpsa_max: 140.0
+  filters:
+    remove_pains: true
+    # Known anti-diabetic natural-product actives (matched by name in CMAUP;
+    # PAINS bypass + force-included, still must pass Lipinski/Veber)
+    benchmark_names:
+      - "quercetin"
+      - "curcumin"
+      - "resveratrol"
+      - "berberine"
+      - "emodin"
+      - "genistein"
+      - "kaempferol"
+      - "baicalein"
+      - "apigenin"
+      - "luteolin"
+      - "naringenin"
+      - "catechin"
+      - "gallic acid"
+      - "ellagic acid"
+      - "betulinic acid"
+      - "ursolic acid"
+      - "oleanolic acid"
+      - "thymoquinone"
+  fingerprints:
+    morgan_radius: 2
+    morgan_bits: 1024
+  # Conservative cap for 4GB RAM MVP
+  max_compounds: 3000
+
+targets:
+  chembl:
+    activity_threshold_um: 10.0
+    confidence_min: 8
+  string:
+    confidence_min: 0.7
