@@ -21,7 +21,7 @@ discovery of anti-diabetic phytochemicals using single-cell and spatial transcri
 ```bash
 conda env create -n phyto python=3.11 -y
 conda activate phyto
-pip install -r <deps>   # see pyproject.toml for the pinned list
+pip install .            # installs the pinned dependencies from pyproject.toml
 conda install -c conda-forge -c bioconda autodock-vina openbabel
 ```
 
