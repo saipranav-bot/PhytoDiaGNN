@@ -58,3 +58,7 @@ python scripts/run_m6_docking.py          # M6: Vina docking + benchmark recover
 
 Outputs land in `results/` (per-stage `summary.json`, master `results/summary.json`, tables) and
 `data/processed/`. Consolidated write-up: `REPORT.md`.
+
+
+## Plain-English Explanation
+See [EXPLAIN_PLAIN_ENGLISH.md](EXPLAIN_PLAIN_ENGLISH.md) for a non-technical summary of what was done, steps, and verification.
